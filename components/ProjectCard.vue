@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
         <NuxtLink :to="url">
             <div class="bg-black text-white shadow-none hover:shadow hover:top-[-2px] rounded-lg p-4 hover:scale-[101%] hover:z-10transition-all duration">
@@ -21,4 +21,4 @@ defineProps({
 
 </script>
 
-<style></style>
+<style></style> -->
