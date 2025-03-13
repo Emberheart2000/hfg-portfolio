@@ -25,8 +25,8 @@ useHead({
 
 useSeoMeta({
   description: '[description]',
-  ogTitle: '[og:title]',
-  ogDescription: '[og:description]',
+  ogTitle: 'Portfolio of Jannik Fauser',
+  ogDescription: 'Interaction Design Portfolio',
   ogImage: '/og-image.png',
   ogUrl: '[og:url]',
   twitterTitle: '[twitter:title]',

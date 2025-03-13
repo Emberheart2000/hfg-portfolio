@@ -2,10 +2,10 @@
     <div class="maxwidth">
         <NuxtLink :to="url">
             <div
-                class="projectcard bg-white text-black shadow-lg hover:shadow-xl hover:top-[-2px] rounded-lg p-4 hover:scale-[101%] hover:z-10 transition-all duration">
+                class="projectcard bg-white shadow-lg hover:shadow-xl hover:top-[-2px] rounded-lg p-4 hover:scale-[101%] hover:z-10 transition-all duration">
                 <div class="description">
-                    <h3 class="title mb-2 font-bold">{{ title }}</h3>
-                    <h4>{{ subtitle }}</h4>
+                    <h2 class="title mb-2 font-bold">{{ title }}</h2>
+                    <h3>{{ subtitle }}</h3>
                     <h4>{{ description }}</h4>
                 </div>
                 <div class="coverimage"><img :src="image" alt=""></div>
@@ -28,7 +28,7 @@ defineProps({
 
 <style>
 .title{
-    font-size: clamp(1rem, calc(1.8rem + 2vw), 4rem);
+    font-size: 1.5rem;
 }
 .projectcard{
     display: flex;
@@ -39,6 +39,7 @@ defineProps({
     transition: all 0.3s;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
+    color: #333
 }
 .coverimage{
     width: 65%;
@@ -54,5 +55,16 @@ defineProps({
     margin-left: 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+.description h3{
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #AEAEAE;
+    margin-bottom: 0.5rem; 
+}
+.description h4{
+    font-size: 1.25rem;
+    font-weight: light;
 }
 </style>

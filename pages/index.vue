@@ -11,6 +11,15 @@
                     <NuxtLink to="/contact" class="link text-base font-medium hover:text-gray-500">GET IN CONTACT
                     </NuxtLink>
                 </nav>
+                <div class="nav2">
+                    <div id="navtext" class="link text-base font-light text-gray-500">NAVIGATION</div>
+                    <NuxtLink to="#" class="link text-base font-bold hover:text-gray-500">HOME</NuxtLink>
+                    <NuxtLink to="#projects" class="link text-base font-medium hover:text-gray-500">PROJECTS
+                    </NuxtLink>
+                    <NuxtLink to="#about" class="link text-base font-medium hover:text-gray-500">HOW I THINK</NuxtLink>
+                    <NuxtLink to="#contact" class="link text-base font-medium hover:text-gray-500">GET IN CONTACT
+                    </NuxtLink>
+                </div>
                 <div class="line"></div>
                 <h5>HELLO THERE! MY NAME IS</h5>
                 <h1>Jannik Fauser</h1>
@@ -22,12 +31,15 @@
             </div>
             <div class="image"><img src="/images/jannik.jpg" alt="Jannik Fauser"></div>
         </div>
-        <div class="mywork maxwidth">
+        <div id="projects"class="mywork maxwidth">
             <div class="separating-line"></div>
             <h5>RECENT PROJECTS</h5>
             <div class="projects">
-                <ProjectCard title="FOCAL" subtitle="Invention Design" image="/images/invention_cover.png" url="/projects/invention" description="blabliblub"/>
-                <ProjectCard title="NERVOUS SYSTEM" subtitle="Interactive Communication" image="/images/ics_cover.png" url="/projects/iks" description="blubliblibbibliblub"/>
+                <ProjectCard title="FOCAL" subtitle="INVENTION DESIGN" image="/images/invention_cover.png"
+                    url="/projects/invention"
+                    description="Verlierst du beim Arbeiten am Laptop oft den Überblick über deine geöffneten Apps? Focal bringt Ordnung in dein digitales Arbeitsumfeld, indem Anwendungen räumlich anordnet werden können – direkt an den Wänden um dich herum. Mit verschiedenen Gesten kannst du Apps zu dir ziehen und so nahtlos zwischen drei verschiedenen Informationsstufen wechseln. So entsteht eine neue, strukturierte Art des digitalen Arbeitens, die sich an deine Bedürfnisse anpasst. Focal ist ein innovatives Mixed-Reality-Interaktionskonzept, entwickelt im Rahmen von Invention Design 1." />
+                <ProjectCard title="NERVOUS SYSTEM" subtitle="Interactive Communication" image="/images/ics_cover.png"
+                    url="/projects/iks" description="blubliblibbibliblub" />
                 <ProjectCard title="Invention" subtitle="Innovative Kommunikationsstrategien" image=""
                     url="/projects/invention" />
             </div>
@@ -94,6 +106,17 @@ nav {
     white-space: nowrap;
 }
 
+.nav2{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 50vh;
+    height: 100vh;
+    padding: 1rem;
+    z-index: 10;
+}
+
 .line {
     width: 100%;
     flex-wrap: wrap;
@@ -110,15 +133,18 @@ nav {
     background-color: #333;
     margin-bottom: 2rem;
 }
-.mywork h5{
+
+.mywork h5 {
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 8rem;
 }
+
 .projectcard {
     margin-bottom: 1rem;
     padding: 0;
 }
+
 /* /Projects */
 /* MEDIA QUERIES */
 @media (max-width: 1400px) {
@@ -147,6 +173,9 @@ nav {
     .text p {
         max-width: 70%;
     }
+    .description h4{
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -163,7 +192,8 @@ nav {
     .text p {
         max-width: 80%;
     }
-    .line{
+
+    .line {
         display: none;
     }
 }
