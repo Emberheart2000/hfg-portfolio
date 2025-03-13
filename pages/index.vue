@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <div class="header">
+        <div class="header maxwidth">
             <div class="text">
                 <nav>
                     <div id="navtext" class="link text-base font-light text-gray-500">NAVIGATION</div>
@@ -22,14 +22,15 @@
             </div>
             <div class="image"><img src="/images/jannik.jpg" alt="Jannik Fauser"></div>
         </div>
-        <!-- <div class="mywork">
+        <div class="mywork maxwidth">
+            <div class="separating-line"></div>
             <h2>MY WORK</h2>
             <div class="projects">
                 <ProjectCard title="IKS" subtitle="Innovative Kommunikationsstrategien" image="" url="/projects/iks" />
                 <ProjectCard title="Invention" subtitle="Innovative Kommunikationsstrategien" image=""
                     url="/projects/invention" />
             </div>
-        </div> -->
+        </div>
     </div>
 </template>
 
@@ -40,13 +41,13 @@
 <style>
 .wrapper {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: calc(0.5rem + 5vw);
-    padding-top: 8rem;
-    padding-bottom: 0;
+    padding: 0;
+    margin: calc(0.5rem + 10vw);
+    margin-top: 4rem;
+    margin-bottom: 0;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     height: 100vh;
     background-color: #fff;
     color: #333;
@@ -55,7 +56,8 @@
 /* SECTION HEADER */
 .header {
     display: flex;
-    max-width: 1300px;
+    top: 0;
+    left: 0;
 }
 
 .text {
@@ -90,6 +92,7 @@
 
 .image {
     width: 50%;
+    padding-bottom: 6rem;
 }
 
 .image img {
@@ -114,7 +117,12 @@ nav {
 
 /* /SECTION HEADER */
 /* Projects */
-
+.separating-line {
+    width: 2000px;
+    height: 1px;
+    background-color: #333;
+    margin-bottom: 2rem;
+}
 /* /Projects */
 /* MEDIA QUERIES */
 @media (max-width: 1400px) {
@@ -136,25 +144,30 @@ nav {
     .text {
         width: 100%;
         padding: 0;
-        margin-left: calc(8rem, 5vw);
+        padding-left: calc(8rem, 5vw);
     }
 
     .text p {
-        max-width: 50%;
+        max-width: 70%;
     }
 }
 
 @media (max-width: 600px) {
-    .wrapper {
-        justify-content: center;
-    }
 
     nav {
         display: none;
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        position: absolute;
     }
 
     .text p {
         max-width: 80%;
+    }
+    .line{
+        display: none;
     }
 }
 
