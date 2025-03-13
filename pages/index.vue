@@ -24,9 +24,10 @@
         </div>
         <div class="mywork maxwidth">
             <div class="separating-line"></div>
-            <h2>MY WORK</h2>
+            <h5>RECENT PROJECTS</h5>
             <div class="projects">
-                <ProjectCard title="IKS" subtitle="Innovative Kommunikationsstrategien" image="" url="/projects/iks" />
+                <ProjectCard title="FOCAL" subtitle="Invention Design" image="/images/invention_cover.png" url="/projects/invention" description="blabliblub"/>
+                <ProjectCard title="NERVOUS SYSTEM" subtitle="Interactive Communication" image="/images/ics_cover.png" url="/projects/iks" description="blubliblibbibliblub"/>
                 <ProjectCard title="Invention" subtitle="Innovative Kommunikationsstrategien" image=""
                     url="/projects/invention" />
             </div>
@@ -39,20 +40,6 @@
 </script>
 
 <style>
-.wrapper {
-    font-family: Arial, sans-serif;
-    padding: 0;
-    margin: calc(0.5rem + 10vw);
-    margin-top: 4rem;
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    background-color: #fff;
-    color: #333;
-}
-
 /* SECTION HEADER */
 .header {
     display: flex;
@@ -97,7 +84,7 @@
 
 .image img {
     max-width: 100%;
-    border-radius: 10px;
+    border-radius: 1rem;
 }
 
 nav {
@@ -118,10 +105,19 @@ nav {
 /* /SECTION HEADER */
 /* Projects */
 .separating-line {
-    width: 2000px;
+    width: 100%;
     height: 1px;
     background-color: #333;
     margin-bottom: 2rem;
+}
+.mywork h5{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8rem;
+}
+.projectcard {
+    margin-bottom: 1rem;
+    padding: 0;
 }
 /* /Projects */
 /* MEDIA QUERIES */
@@ -145,6 +141,7 @@ nav {
         width: 100%;
         padding: 0;
         padding-left: calc(8rem, 5vw);
+        padding-bottom: 6rem;
     }
 
     .text p {
