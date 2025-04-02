@@ -11,8 +11,8 @@
                     <NuxtLink to="/contact" class="link text-base font-medium hover:text-gray-500">GET IN CONTACT
                     </NuxtLink>
                 </nav>
-                <div class="nav2">
-                    <div id="navtext" class="link text-base font-light text-gray-500">NAVIGATION</div>
+                <div :class="['nav2', { 'scrolled-nav2': scrollPosition > 100 }]">
+                    <div id="navtext2" class="link text-base font-light text-gray-500">NAVIGATION</div>
                     <NuxtLink to="#" class="link text-base font-bold hover:text-gray-500">HOME</NuxtLink>
                     <NuxtLink to="#projects" class="link text-base font-medium hover:text-gray-500">PROJECTS
                     </NuxtLink>
@@ -40,7 +40,7 @@
                     description="Verlierst du beim Arbeiten am Laptop oft den Überblick über deine geöffneten Apps? Focal bringt Ordnung in dein digitales Arbeitsumfeld, indem Anwendungen räumlich anordnet werden können – direkt an den Wänden um dich herum. Mit verschiedenen Gesten kannst du Apps zu dir ziehen und so nahtlos zwischen drei verschiedenen Informationsstufen wechseln. So entsteht eine neue, strukturierte Art des digitalen Arbeitens, die sich an deine Bedürfnisse anpasst. Focal ist ein innovatives Mixed-Reality-Interaktionskonzept, entwickelt im Rahmen von Invention Design 1." />
                 <ProjectCard title="NERVOUS SYSTEM" subtitle="Interactive Communication" image="/images/ics_cover.png"
                     url="/projects/iks" description="blubliblibbibliblub" />
-                <ProjectCard title="Invention" subtitle="Innovative Kommunikationsstrategien" image=""
+                <ProjectCard title="INVENTION" subtitle="Innovative Kommunikationsstrategien" image=""
                     url="/projects/invention" />
             </div>
         </div>
@@ -48,15 +48,30 @@
 </template>
 
 <script lang="ts" setup>
+    import { ref, onMounted, onUnmounted } from 'vue';
 
+const scrollPosition = ref(0);
+
+const updateScroll = () => {
+    scrollPosition.value = window.scrollY;
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', updateScroll);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', updateScroll);
+});
 </script>
 
 <style>
 /* SECTION HEADER */
 .header {
-    display: flex;
-    top: 0;
-    left: 0;
+  display: flex;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease;
 }
 
 .text {
@@ -74,7 +89,7 @@
 
 .text p {
     margin-top: 0.5rem;
-    font-size: 16px;
+    font-size: 0.8rem;
     line-height: 2;
     max-width: 80%;
 
@@ -107,6 +122,18 @@ nav {
 }
 
 .nav2{
+    /* display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 50vh;
+    height: 100vh;
+    padding: 1rem;
+    z-index: 10; */
+    display: none;
+}
+
+.scrolled-nav2 {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -147,6 +174,12 @@ nav {
 
 /* /Projects */
 /* MEDIA QUERIES */
+@media (max-width: 1600px) {
+  .nav2 {
+    display: none;
+  }
+}
+
 @media (max-width: 1400px) {
     #navtext {
         display: none;
