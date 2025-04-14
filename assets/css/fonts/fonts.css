@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'PP Neue Corp Compact';
+    src: url('PPNeueCorp-CompactUltrabold.woff2') format('woff2'),
+        url('PPNeueCorp-CompactUltrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Compact';
+    src: url('PPNeueCorp-CompactMedium.woff2') format('woff2'),
+        url('PPNeueCorp-CompactMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Condensed Ullight';
+    src: url('PPNeueCorp-CondensedUltralight.woff2') format('woff2'),
+        url('PPNeueCorp-CondensedUltralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Compressed Ullight';
+    src: url('PPNeueCorp-CompressedUltralight.woff2') format('woff2'),
+        url('PPNeueCorp-CompressedUltralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Compressed Ulbold';
+    src: url('PPNeueCorp-CompressedUltrabold.woff2') format('woff2'),
+        url('PPNeueCorp-CompressedUltrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Compressed';
+    src: url('PPNeueCorp-CompressedMedium.woff2') format('woff2'),
+        url('PPNeueCorp-CompressedMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Condensed';
+    src: url('PPNeueCorp-CondensedMedium.woff2') format('woff2'),
+        url('PPNeueCorp-CondensedMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Condensed Ulbold';
+    src: url('PPNeueCorp-CondensedUltrabold.woff2') format('woff2'),
+        url('PPNeueCorp-CondensedUltrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Compact';
+    src: url('PPNeueCorp-CompactUltralight.woff2') format('woff2'),
+        url('PPNeueCorp-CompactUltralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Extended';
+    src: url('PPNeueCorp-ExtendedMedium.woff2') format('woff2'),
+        url('PPNeueCorp-ExtendedMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Narrow';
+    src: url('PPNeueCorp-NarrowUltralight.woff2') format('woff2'),
+        url('PPNeueCorp-NarrowUltralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Extended Ullight';
+    src: url('PPNeueCorp-ExtendedUltralight.woff2') format('woff2'),
+        url('PPNeueCorp-ExtendedUltralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Extended';
+    src: url('PPNeueCorp-ExtendedUltrabold.woff2') format('woff2'),
+        url('PPNeueCorp-ExtendedUltrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Normal';
+    src: url('PPNeueCorp-NormalMedium.woff2') format('woff2'),
+        url('PPNeueCorp-NormalMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Narrow';
+    src: url('PPNeueCorp-NarrowMedium.woff2') format('woff2'),
+        url('PPNeueCorp-NarrowMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Normal';
+    src: url('PPNeueCorp-NormalUltrabold.woff2') format('woff2'),
+        url('PPNeueCorp-NormalUltrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Narrow';
+    src: url('PPNeueCorp-NarrowUltrabold.woff2') format('woff2'),
+        url('PPNeueCorp-NarrowUltrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Normal';
+    src: url('PPNeueCorp-NormalUltralight.woff2') format('woff2'),
+        url('PPNeueCorp-NormalUltralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Tight';
+    src: url('PPNeueCorp-TightUltralight.woff2') format('woff2'),
+        url('PPNeueCorp-TightUltralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Wide';
+    src: url('PPNeueCorp-WideMedium.woff2') format('woff2'),
+        url('PPNeueCorp-WideMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Wide';
+    src: url('PPNeueCorp-WideUltrabold.woff2') format('woff2'),
+        url('PPNeueCorp-WideUltrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Wide';
+    src: url('PPNeueCorp-WideUltralight.woff2') format('woff2'),
+        url('PPNeueCorp-WideUltralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Tight';
+    src: url('PPNeueCorp-TightUltrabold.woff2') format('woff2'),
+        url('PPNeueCorp-TightUltrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Corp Tight';
+    src: url('PPNeueCorp-TightMedium.woff2') format('woff2'),
+        url('PPNeueCorp-TightMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

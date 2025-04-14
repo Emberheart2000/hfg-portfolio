@@ -27,6 +27,21 @@ defineProps({
 </script>
 
 <style>
+/* Benutzerdefinierte Tailwind-Klassen für Schatten */
+@layer utilities {
+  .bg-custom-gray {
+    background-color: #F0F0F3;
+  }
+  .shadow-custom {
+    box-shadow: -10px -10px 30px 0 #FFFFFF, 10px 10px 30px 0 rgba(174, 174, 192, 0.4);
+  }
+  .shadow-custom-hover {
+    box-shadow: -10px -10px 30px 0 #FFFFFF, 10px 10px 30px 0 rgba(174, 174, 192, 0.6);
+  }
+  .inner-shadow {
+    box-shadow: inset -10px -10px 10px 0 rgba(174, 174, 192, 0.25), inset 10px 10px 10px 0 #FFFFFF;
+  }
+}
 .title{
     font-size: 1.5rem;
 }

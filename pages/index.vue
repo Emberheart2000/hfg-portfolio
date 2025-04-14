@@ -12,7 +12,6 @@
                     </NuxtLink>
                 </nav>
                 <div :class="['nav2', { 'scrolled-nav2': scrollPosition > 100 }]">
-                    <div id="navtext2" class="link text-base font-light text-gray-500">NAVIGATION</div>
                     <NuxtLink to="#" class="link text-base font-bold hover:text-gray-500">HOME</NuxtLink>
                     <NuxtLink to="#projects" class="link text-base font-medium hover:text-gray-500">PROJECTS
                     </NuxtLink>
@@ -24,12 +23,10 @@
                 <h5>HELLO THERE! MY NAME IS</h5>
                 <h1>Jannik Fauser</h1>
                 <!-- <p>Ich bin ein Interaktionsdesigner mit einer Leidenschaft für die Verbindung von Technologie und Natur. Als Entdeckerfreudiger bin ich stets auf der Suche nach neuen Wegen, um Benutzererlebnisse zu gestalten, die sowohl intuitiv als auch inspirierend sind.</p> -->
-                <p>I am a passionate interaction-design student. Specifically i am interested in the connection between
-                    technics and nature. Since i love to explore i am always down to improve the usability of products
-                    to improve them and get happier clients as a result.</p>
+                <p>Im a passionate interaction design student who likes to design and test ideas. I really like to explore new problems and test if my solution could fit the problem. Im really into smart home and plants, but i havent found a good way to connect them together yet.</p>
 
             </div>
-            <div class="image"><img src="/images/jannik.jpg" alt="Jannik Fauser"></div>
+            <div class="image"><img src="/images/IMG_4643.JPG" alt="Jannik Fauser"></div>
         </div>
         <div id="projects"class="mywork maxwidth">
             <div class="separating-line"></div>
@@ -81,22 +78,26 @@ onUnmounted(() => {
 
 .text h1 {
     font-size: clamp(1.8rem, calc(1.8rem + 2vw), 4rem);
-    font-weight: 550;
     left: -0.5vw;
     margin-top: 0rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
+    font-family: 'PP Neue Corp Normal';
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .text p {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
+    margin-top: 0rem;
+    font-size: 1.2rem;
     line-height: 2;
     max-width: 80%;
 
 }
 
 .text h5 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
 }
 
@@ -147,7 +148,7 @@ nav {
 .line {
     width: 100%;
     flex-wrap: wrap;
-    height: 1px;
+    height: 0.8px;
     margin-bottom: 100px;
     background-color: #333;
 }

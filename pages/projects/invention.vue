@@ -12,5 +12,9 @@
   </script>
   
   <style>
-  
+    /* h1{
+      font-family: 'PP Neue Corp Compact';
+      font-size: 4rem;
+      font-weight: 600;
+    } */
   </style>
