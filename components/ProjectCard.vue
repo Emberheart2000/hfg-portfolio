@@ -1,21 +1,21 @@
 <template>
     <div class="maxwidth">
         <NuxtLink :to="url">
-            <div
-                class="projectcard bg-white shadow-lg hover:shadow-xl hover:top-[-2px] rounded-lg p-4 hover:scale-[101%] hover:z-10 transition-all duration">
+            <div class="projectcard neo-card">
                 <div class="description">
-                    <h2 class="title mb-2 font-bold">{{ title }}</h2>
-                    <h3>{{ subtitle }}</h3>
-                    <h4>{{ description }}</h4>
+                    <h2 class="title">{{ title }}</h2>
+                    <h3 class="subtitle">{{ subtitle }}</h3>
+                    <h4 class="project-desc">{{ description }}</h4>
                 </div>
-                <div class="coverimage"><img :src="image" alt=""></div>
+                <div class="coverimage">
+                    <img :src="image" alt="">
+                </div>
             </div>
         </NuxtLink>
     </div>
 </template>
 
 <script lang="ts" setup>
-const test = "hallo test"
 defineProps({
     title: String,
     subtitle: String,
@@ -23,63 +23,96 @@ defineProps({
     url: String,
     description: String,
 })
-
 </script>
 
 <style>
-/* Benutzerdefinierte Tailwind-Klassen für Schatten */
-@layer utilities {
-  .bg-custom-gray {
-    background-color: #F0F0F3;
-  }
-  .shadow-custom {
-    box-shadow: -10px -10px 30px 0 #FFFFFF, 10px 10px 30px 0 rgba(174, 174, 192, 0.4);
-  }
-  .shadow-custom-hover {
-    box-shadow: -10px -10px 30px 0 #FFFFFF, 10px 10px 30px 0 rgba(174, 174, 192, 0.6);
-  }
-  .inner-shadow {
-    box-shadow: inset -10px -10px 10px 0 rgba(174, 174, 192, 0.25), inset 10px 10px 10px 0 #FFFFFF;
-  }
-}
-.title{
-    font-size: 1.5rem;
-}
-.projectcard{
+.projectcard {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    transition: all 0.3s;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    color: #333
+    transition: all 0.3s ease;
+    border-radius: 1rem;
+    color: var(--neo-text-color);
+    background-color: var(--neo-bg-color);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: 
+        10px 10px 20px var(--neo-shadow-dark), 
+        -10px -10px 20px var(--neo-shadow-light);
 }
-.coverimage{
+
+.projectcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        15px 15px 30px var(--neo-shadow-dark), 
+        -15px -15px 30px var(--neo-shadow-light);
+}
+
+.coverimage {
     width: 65%;
     padding-bottom: 0;
     object-fit: cover;
-}
-.coverimage img{
-    border-bottom-right-radius: 1rem;
+    overflow: hidden;
     border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
-.description{
+
+.coverimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.projectcard:hover .coverimage img {
+    transform: scale(1.05);
+}
+
+.description {
     width: 35%;
-    margin-left: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-right: 2rem;
+    padding: 2rem;
 }
-.description h3{
-    font-size: 0.75rem;
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--neo-text-color);
+}
+
+.subtitle {
+    font-size: 0.8rem;
     font-weight: 600;
-    color: #AEAEAE;
-    margin-bottom: 0.5rem; 
+    color: #888;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
 }
-.description h4{
-    font-size: 1.25rem;
-    font-weight: light;
+
+.project-desc {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .projectcard {
+        flex-direction: column-reverse;
+    }
+    
+    .description, .coverimage {
+        width: 100%;
+    }
+    
+    .coverimage {
+        height: 250px;
+        border-radius: 1rem 1rem 0 0;
+    }
+    
+    .coverimage img {
+        border-radius: 1rem 1rem 0 0;
+    }
 }
 </style>
