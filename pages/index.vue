@@ -1,21 +1,21 @@
 <template>
     <div class="wrapper">
-        <div class="hero-section maxwidth">
+        <section id="home" class="hero-section maxwidth">
             <div class="hero-content">
                 <h5 class="subtitle-text">HELLO THERE! MY NAME IS</h5>
                 <h1 class="neo-title">Jannik Fauser</h1>
                 <p class="hero-description">I'm a passionate interaction design student who likes to design and test ideas. I really like to explore new problems and test if my solution could fit the problem. I'm really into smart home and plants, but I haven't found a good way to connect them together yet.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="neo-button">View Projects</a>
-                    <a href="/contact" class="neo-button outline">Get in Touch</a>
+                    <NuxtLink to="/contact" class="neo-button outline">Get in Touch</NuxtLink>
                 </div>
             </div>
             <div class="hero-image neo-card">
                 <img src="/images/IMG_4643.JPG" alt="Jannik Fauser">
             </div>
-        </div>
+        </section>
 
-        <div id="projects" class="projects-section maxwidth">
+        <section id="projects" class="projects-section maxwidth">
             <div class="section-header">
                 <div class="neo-separator"></div>
                 <h5 class="subtitle-text">RECENT PROJECTS</h5>
@@ -40,47 +40,30 @@
                     url="/projects/invention"
                     description="Exploring new ways of communication through innovative design concepts and strategies." />
             </div>
-        </div>
-
-        <div class="project-gallery">
-            <div class="gallery-grid">
-                <div v-for="(project, index) in projects" :key="index" class="project-card">
-                    <div class="neo-card">
-                        <div class="project-image-container">
-                            <img :src="project.coverImage" :alt="project.title" class="project-image" />
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span v-for="(tag, tagIndex) in project.tags" :key="tagIndex" class="project-tag">
-                                        {{ tag }}
-                                    </span>
-                                </div>
-                                <div class="project-coworkers">
-                                    <p>mit:</p>
-                                    <span v-for="(coworker, coworkerIndex) in project.coworkers" :key="coworkerIndex">
-                                        {{ coworker }}{{ coworkerIndex < project.coworkers.length - 1 ? ', ' : '' }}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">{{ project.title }}</h3>
-                            <p class="project-subtitle">{{ project.subtitle }}</p>
-                            <NuxtLink :to="project.url" class="project-link">Details anzeigen</NuxtLink>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
 </template>
 
 <script lang="ts" setup>
-defineProps({
-  projects: {
-    type: Array,
-    required: true,
-    default: () => [],
-  }
+// Scroll behavior helper for smooth anchor navigation
+onMounted(() => {
+  // Handle anchor links with smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
 });
 </script>
 
@@ -92,6 +75,7 @@ defineProps({
     align-items: center;
     margin-bottom: 8rem;
     padding: 2rem 0;
+    scroll-margin-top: 6rem; /* For anchor navigation */
 }
 
 .hero-content {
@@ -190,6 +174,7 @@ defineProps({
 /* Projects Section */
 .projects-section {
     padding: 4rem 0;
+    scroll-margin-top: 6rem; /* For anchor navigation */
 }
 
 .section-header {

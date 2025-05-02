@@ -1,5 +1,5 @@
 <template>
-  <header class="neo-header">
+  <header :class="['neo-header', { 'header-hidden': isHeaderHidden }]">
     <div class="header-container maxwidth">
       <div class="logo">
         <NuxtLink to="/">JF</NuxtLink>
@@ -15,7 +15,34 @@
 </template>
 
 <script lang="ts" setup>
-// No additional logic needed
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const isHeaderHidden = ref(false);
+let lastScrollTop = 0;
+const scrollThreshold = 100; // Minimum scroll amount before hiding header
+
+const handleScroll = () => {
+  const currentScrollTop = window.scrollY;
+  
+  // Hide header when scrolling down beyond threshold
+  if (currentScrollTop > lastScrollTop && currentScrollTop > scrollThreshold) {
+    isHeaderHidden.value = true;
+  } 
+  // Show header when scrolling up
+  else if (currentScrollTop < lastScrollTop) {
+    isHeaderHidden.value = false;
+  }
+  
+  lastScrollTop = currentScrollTop;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <style>
@@ -28,6 +55,11 @@
   background-color: var(--neo-bg-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   padding: 1rem 0;
+  transition: transform 0.3s ease;
+}
+
+.header-hidden {
+  transform: translateY(-100%);
 }
 
 .header-container {
