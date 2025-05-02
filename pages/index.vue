@@ -28,24 +28,16 @@
             </div>
             <div class="image"><img src="/images/IMG_4643.JPG" alt="Jannik Fauser"></div>
         </div>
-        <div id="projects"class="mywork maxwidth">
+        <div id="projects" class="mywork maxwidth">
             <div class="separating-line"></div>
             <h5>RECENT PROJECTS</h5>
-            <div class="projects">
-                <ProjectCard title="FOCAL" subtitle="INVENTION DESIGN" image="/images/invention_cover.png"
-                    url="/projects/invention"
-                    description="Verlierst du beim Arbeiten am Laptop oft den Überblick über deine geöffneten Apps? Focal bringt Ordnung in dein digitales Arbeitsumfeld, indem Anwendungen räumlich anordnet werden können – direkt an den Wänden um dich herum. Mit verschiedenen Gesten kannst du Apps zu dir ziehen und so nahtlos zwischen drei verschiedenen Informationsstufen wechseln. So entsteht eine neue, strukturierte Art des digitalen Arbeitens, die sich an deine Bedürfnisse anpasst. Focal ist ein innovatives Mixed-Reality-Interaktionskonzept, entwickelt im Rahmen von Invention Design 1." />
-                <ProjectCard title="NERVOUS SYSTEM" subtitle="Interactive Communication" image="/images/ics_cover.png"
-                    url="/projects/iks" description="blubliblibbibliblub" />
-                <ProjectCard title="INVENTION" subtitle="Innovative Kommunikationsstrategien" image=""
-                    url="/projects/invention" />
-            </div>
+            <ProjectGallery :projects="projectsList" />
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-    import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const scrollPosition = ref(0);
 
@@ -60,6 +52,64 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', updateScroll);
 });
+
+// Projektdaten
+const projectsList = [
+    {
+        title: "FOCAL",
+        subtitle: "INVENTION DESIGN",
+        coverImage: "/images/invention_cover.png",
+        url: "/projects/invention",
+        coworkers: ["Max Mustermann", "Lisa Schmidt"],
+        tags: ["UI/UX", "AR", "Mixed Reality"],
+        description: "Verlierst du beim Arbeiten am Laptop oft den Überblick über deine geöffneten Apps? Focal bringt Ordnung in dein digitales Arbeitsumfeld."
+    },
+    {
+        title: "NERVOUS SYSTEM",
+        subtitle: "INTERACTIVE COMMUNICATION",
+        coverImage: "/images/ics_cover.png",
+        url: "/projects/iks",
+        coworkers: ["Anna Müller", "David Jung"],
+        tags: ["Interactive", "Installation", "IoT"],
+        description: "Eine interaktive Installation, die auf Bewegungen reagiert."
+    },
+    {
+        title: "BOTANIFY",
+        subtitle: "APP DESIGN",
+        coverImage: "/images/botanify_cover.jpg",
+        url: "/projects/botanify",
+        coworkers: ["Laura Weber", "Tim Holz"],
+        tags: ["Mobile", "UI Design", "Plants"],
+        description: "Eine App zur Pflanzenpflege mit intelligenter Erkennung."
+    },
+    {
+        title: "SOUNDSCAPE",
+        subtitle: "AUDIO EXPERIENCE",
+        coverImage: "/images/soundscape_cover.jpg",
+        url: "/projects/soundscape",
+        coworkers: ["Michael Keller"],
+        tags: ["Audio", "Experience", "Interactive"],
+        description: "Ein immersives Audioerlebnis, das auf die Umgebung reagiert."
+    },
+    {
+        title: "CITYPLANNER",
+        subtitle: "DATA VISUALIZATION",
+        coverImage: "/images/cityplanner_cover.jpg",
+        url: "/projects/cityplanner",
+        coworkers: ["Sarah Becker", "Jan Wolf", "Petra Meier"],
+        tags: ["Data Viz", "Urban", "Planning"],
+        description: "Visualisierung urbaner Daten für die Stadtplanung."
+    },
+    {
+        title: "ECOTRACKER",
+        subtitle: "SUSTAINABLE DESIGN",
+        coverImage: "/images/ecotracker_cover.jpg",
+        url: "/projects/ecotracker",
+        coworkers: ["Mark Johnson"],
+        tags: ["Sustainability", "Tracking", "App"],
+        description: "Eine Anwendung zur Verfolgung des persönlichen ökologischen Fußabdrucks."
+    }
+];
 </script>
 
 <style>
