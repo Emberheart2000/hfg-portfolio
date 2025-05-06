@@ -15,7 +15,7 @@
         </p>
         
         <div class="about-image neo-card">
-          <img src="/images/IMG_4643.JPG" alt="Jannik Fauser">
+          <!-- <img src="/images/IMG_4643.JPG" alt="Jannik Fauser"> -->
         </div>
         
         <h2 class="neo-subtitle">My Approach</h2>
