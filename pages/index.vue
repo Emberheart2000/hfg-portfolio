@@ -45,7 +45,7 @@
 </template>
 
 <script lang="ts" setup>
-// Scroll behavior helper for smooth anchor navigation
+// Scroll behavior helper for smooth anchor navigation!
 onMounted(() => {
   // Handle anchor links with smooth scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
