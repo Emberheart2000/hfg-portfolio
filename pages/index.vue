@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="hero-image neo-card">
-                <img src="/images/IMG_4643.JPG" alt="Jannik Fauser">
+                <img src="/images/IMG_4643.jpg" alt="Jannik Fauser">
             </div>
         </section>
 
