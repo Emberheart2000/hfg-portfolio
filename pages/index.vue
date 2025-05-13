@@ -2,7 +2,7 @@
     <div class="wrapper">
         <section id="home" class="hero-section maxwidth">
             <div class="hero-content">
-                <h5 class="subtitle-text">HELLO THERE! MY NAME IS</h5>
+                <h5 class="subtitle-text teal-text">HELLO THERE! MY NAME IS</h5>
                 <h1 class="neo-title">Jannik Fauser</h1>
                 <p class="hero-description">I'm a passionate interaction design student who likes to design and test ideas. I really like to explore new problems and test if my solution could fit the problem. I'm really into smart home and plants, but I haven't found a good way to connect them together yet.</p>
                 <div class="hero-buttons">
@@ -11,14 +11,14 @@
                 </div>
             </div>
             <div class="hero-image neo-card">
-                <img src="/images/IMG_4643.jpg" alt="Jannik Fauser">
+                <img src="/images/IMG_4643.png" alt="Jannik Fauser">
             </div>
         </section>
 
         <section id="projects" class="projects-section maxwidth">
             <div class="section-header">
                 <div class="neo-separator"></div>
-                <h5 class="subtitle-text">RECENT PROJECTS</h5>
+                <h5 class="subtitle-text teal-text">RECENT PROJECTS</h5>
             </div>
 
             <div class="projects-grid">
@@ -30,7 +30,7 @@
                     
                 <ProjectCard title="NERVOUS SYSTEM" 
                     subtitle="INTERACTIVE COMMUNICATION" 
-                    image="/images/ics_cover.png"
+                    image="/images/ics/ics_cover.png"
                     url="/projects/iks" 
                     description="An interactive exhibition piece that explores the connection between technology and human nervous systems." />
                     
@@ -45,8 +45,14 @@
 </template>
 
 <script lang="ts" setup>
-// Scroll behavior helper for smooth anchor navigation!
+import { useProjectsStore } from '~/composables/useProjectsStore';
+import { onMounted } from 'vue';
+
+// Scroll behavior helper for smooth anchor navigation
 onMounted(() => {
+  // Initialize projects store
+  const projectsStore = useProjectsStore();
+  
   // Handle anchor links with smooth scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -68,6 +74,16 @@ onMounted(() => {
 </script>
 
 <style>
+/* Teal text styling */
+.teal-text {
+  color: var(--neo-accent-color) !important;
+}
+
+.teal-accent {
+  color: var(--neo-accent-color);
+  font-weight: 600;
+}
+
 /* Hero Section */
 .hero-section {
     display: flex;
@@ -86,7 +102,6 @@ onMounted(() => {
 .subtitle-text {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #888;
     letter-spacing: 0.1em;
     margin-bottom: 1rem;
 }

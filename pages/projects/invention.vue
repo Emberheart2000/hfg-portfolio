@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="project-container maxwidth">
       <div class="project-header">
-        <h5 class="subtitle-text">INVENTION DESIGN</h5>
+        <h5 class="subtitle-text teal-text">INVENTION DESIGN</h5>
         <h1 class="neo-title">FOCAL</h1>
       </div>
       
@@ -13,21 +13,21 @@
       <div class="project-content neo-container">
         <div class="project-info">
           <div class="info-item">
-            <h3>Year</h3>
+            <h3 class="teal-text">Year</h3>
             <p>2024</p>
           </div>
           <div class="info-item">
-            <h3>Category</h3>
+            <h3 class="teal-text">Category</h3>
             <p>Mixed Reality Interface</p>
           </div>
           <div class="info-item">
-            <h3>Tools</h3>
+            <h3 class="teal-text">Tools</h3>
             <p>Unity, Figma, Blender</p>
           </div>
         </div>
         
         <div class="project-description">
-          <h2 class="section-title">Project Overview</h2>
+          <h2 class="section-title teal-accent">Project Overview</h2>
           <p>
             Verlierst du beim Arbeiten am Laptop oft den Überblick über deine geöffneten Apps? Focal bringt Ordnung in dein digitales Arbeitsumfeld, indem Anwendungen räumlich anordnet werden können – direkt an den Wänden um dich herum.
           </p>
@@ -38,7 +38,7 @@
           
           <div class="neo-separator"></div>
           
-          <h2 class="section-title">The Problem</h2>
+          <h2 class="section-title teal-accent">The Problem</h2>
           <p>
             In der heutigen digitalen Arbeitswelt sind wir ständig von zahlreichen geöffneten Anwendungen umgeben. Traditionelle Betriebssysteme bieten nur begrenzte Möglichkeiten zur Organisation dieser Anwendungen, was zu Überlastung und verminderter Produktivität führen kann.
           </p>
@@ -54,20 +54,20 @@
           
           <div class="neo-separator"></div>
           
-          <h2 class="section-title">The Solution</h2>
+          <h2 class="section-title teal-accent">The Solution</h2>
           <p>
             Focal nutzt Mixed Reality, um digitalen Arbeitsbereichen eine räumliche Dimension zu verleihen. Anwendungen können um den Benutzer herum positioniert werden, wobei drei Informationsebenen eine intuitive Organisation ermöglichen:
           </p>
           
           <ul class="solution-list">
             <li>
-              <strong>Periphere Ebene:</strong> Weniger wichtige Apps bleiben im Blickfeld, ohne abzulenken
+              <strong class="teal-text">Periphere Ebene:</strong> Weniger wichtige Apps bleiben im Blickfeld, ohne abzulenken
             </li>
             <li>
-              <strong>Fokusebene:</strong> Aktiv genutzte Apps werden in optimaler Position platziert
+              <strong class="teal-text">Fokusebene:</strong> Aktiv genutzte Apps werden in optimaler Position platziert
             </li>
             <li>
-              <strong>Detailebene:</strong> Ermöglicht tiefe Interaktion mit einer einzelnen Anwendung
+              <strong class="teal-text">Detailebene:</strong> Ermöglicht tiefe Interaktion mit einer einzelnen Anwendung
             </li>
           </ul>
           
@@ -78,15 +78,46 @@
       </div>
       
       <div class="project-navigation">
-        <NuxtLink to="/projects/iks" class="neo-button">Next Project</NuxtLink>
         <NuxtLink to="/" class="neo-button outline">Back to Home</NuxtLink>
+        
+        <!-- Show next project button if there is a next project -->
+        <NuxtLink 
+          v-if="nextProject && !haveVisitedAll" 
+          :to="nextProject.url" 
+          class="neo-button">
+          Next Project
+        </NuxtLink>
+        
+        <!-- Show previous projects button if all projects have been visited -->
+        <NuxtLink 
+          v-if="haveVisitedAll && prevProject" 
+          :to="prevProject.url" 
+          class="neo-button">
+          Previous Project
+        </NuxtLink>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-// No additional logic needed
+import { useProjectsStore } from '~/composables/useProjectsStore';
+import { onMounted, computed } from 'vue';
+
+const projectId = 'invention';
+const projectsStore = useProjectsStore();
+
+// Get next and previous projects
+const nextProject = computed(() => projectsStore.getNextProject(projectId));
+const prevProject = computed(() => projectsStore.getPreviousProject(projectId));
+
+// Check if all projects have been visited
+const haveVisitedAll = computed(() => projectsStore.hasVisitedAll());
+
+onMounted(() => {
+  // Mark this project as visited when the page loads
+  projectsStore.markVisited(projectId);
+});
 </script>
 
 <style>
@@ -99,6 +130,15 @@
 .project-header {
   margin-bottom: 3rem;
   text-align: center;
+}
+
+.teal-text {
+  color: var(--neo-accent-color) !important;
+}
+
+.teal-accent {
+  color: var(--neo-accent-color);
+  font-weight: 600;
 }
 
 .project-hero {
@@ -130,7 +170,6 @@
 .info-item h3 {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #888;
   margin-bottom: 0.5rem;
 }
 
@@ -204,6 +243,10 @@
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;
+}
+
+.project-navigation .neo-button.outline {
+  margin-right: auto;
 }
 
 @media (max-width: 768px) {

@@ -2,32 +2,32 @@
   <div class="wrapper">
     <div class="project-container maxwidth">
       <div class="project-header">
-        <h5 class="subtitle-text">INTERACTIVE COMMUNICATION</h5>
+        <h5 class="subtitle-text teal-text">INTERACTIVE COMMUNICATION</h5>
         <h1 class="neo-title">NERVOUS SYSTEM</h1>
       </div>
       
       <div class="project-hero neo-card">
-        <img src="/images/ics_cover.png" alt="ICS Project">
+        <img src="/images/ics/ics_cover.png" alt="ICS Project">
       </div>
       
       <div class="project-content neo-container">
         <div class="project-info">
           <div class="info-item">
-            <h3>Year</h3>
+            <h3 class="teal-text">Year</h3>
             <p>2024</p>
           </div>
           <div class="info-item">
-            <h3>Category</h3>
+            <h3 class="teal-text">Category</h3>
             <p>Interactive Exhibition</p>
           </div>
           <div class="info-item">
-            <h3>Tools</h3>
+            <h3 class="teal-text">Tools</h3>
             <p>Arduino, Processing, Sensors</p>
           </div>
         </div>
         
         <div class="project-description">
-          <h2 class="section-title">Project Overview</h2>
+          <h2 class="section-title teal-accent">Project Overview</h2>
           <p>
             The Nervous System project explores the connection between technology and human biology. 
             It creates an interactive experience that simulates how our nervous system responds to external stimuli.
@@ -40,7 +40,7 @@
           
           <div class="neo-separator"></div>
           
-          <h2 class="section-title">Process & Development</h2>
+          <h2 class="section-title teal-accent">Process & Development</h2>
           <p>
             The development process involved extensive research into both neurological science and 
             interactive technologies. Working with a team of three, we explored different ways to 
@@ -49,16 +49,16 @@
           
           <div class="project-gallery">
             <div class="gallery-item neo-card">
-              <img src="/images/ics_cover.png" alt="Process Image 1">
+              <img src="/images/ics/ics_cover.png" alt="Process Image 1">
             </div>
             <div class="gallery-item neo-card">
-              <img src="/images/ics_cover.png" alt="Process Image 2">
+              <img src="/images/ics/ics_cover.png" alt="Process Image 2">
             </div>
           </div>
           
           <div class="neo-separator"></div>
           
-          <h2 class="section-title">Outcome & Learnings</h2>
+          <h2 class="section-title teal-accent">Outcome & Learnings</h2>
           <p>
             The final installation was exhibited at the HfG Schwäbisch Gmünd, where it received positive 
             feedback for its innovative approach to connecting technology with human biology. 
@@ -69,15 +69,46 @@
       </div>
       
       <div class="project-navigation">
-        <NuxtLink to="/projects/invention" class="neo-button">Previous Project</NuxtLink>
         <NuxtLink to="/" class="neo-button outline">Back to Home</NuxtLink>
+        
+        <!-- Show next project button if there is a next project -->
+        <NuxtLink 
+          v-if="nextProject && !haveVisitedAll" 
+          :to="nextProject.url" 
+          class="neo-button">
+          Next Project
+        </NuxtLink>
+        
+        <!-- Show previous projects button if all projects have been visited -->
+        <NuxtLink 
+          v-if="haveVisitedAll && prevProject" 
+          :to="prevProject.url" 
+          class="neo-button">
+          Previous Project
+        </NuxtLink>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-// No additional logic needed
+import { useProjectsStore } from '~/composables/useProjectsStore';
+import { onMounted, computed } from 'vue';
+
+const projectId = 'iks';
+const projectsStore = useProjectsStore();
+
+// Get next and previous projects
+const nextProject = computed(() => projectsStore.getNextProject(projectId));
+const prevProject = computed(() => projectsStore.getPreviousProject(projectId));
+
+// Check if all projects have been visited
+const haveVisitedAll = computed(() => projectsStore.hasVisitedAll());
+
+onMounted(() => {
+  // Mark this project as visited when the page loads
+  projectsStore.markVisited(projectId);
+});
 </script>
 
 <style>
@@ -90,6 +121,15 @@
 .project-header {
   margin-bottom: 3rem;
   text-align: center;
+}
+
+.teal-text {
+  color: var(--neo-accent-color) !important;
+}
+
+.teal-accent {
+  color: var(--neo-accent-color);
+  font-weight: 600;
 }
 
 .project-hero {
@@ -121,7 +161,6 @@
 .info-item h3 {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #888;
   margin-bottom: 0.5rem;
 }
 
@@ -171,6 +210,10 @@
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;
+}
+
+.project-navigation .neo-button.outline {
+  margin-right: auto;
 }
 
 @media (max-width: 768px) {

@@ -5,7 +5,7 @@
   --neo-text-color: #333;
   --neo-shadow-dark: rgba(174, 174, 192, 0.3);
   --neo-shadow-light: rgba(255, 255, 255, 0.8);
-  --neo-accent-color: #6D66FB;
+  --neo-accent-color: rgb(64, 147, 152); /* Teal accent color */
 }
 
 body {

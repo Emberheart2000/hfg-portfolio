@@ -4,7 +4,7 @@
             <div class="projectcard neo-card">
                 <div class="description">
                     <h2 class="title">{{ title }}</h2>
-                    <h3 class="subtitle">{{ subtitle }}</h3>
+                    <h3 class="subtitle teal-text">{{ subtitle }}</h3>
                     <h4 class="project-desc">{{ description }}</h4>
                 </div>
                 <div class="coverimage">
@@ -26,6 +26,10 @@ defineProps({
 </script>
 
 <style>
+.teal-text {
+  color: var(--neo-accent-color) !important;
+}
+
 .projectcard {
     display: flex;
     flex-direction: row;
@@ -85,7 +89,6 @@ defineProps({
 .subtitle {
     font-size: 0.8rem;
     font-weight: 600;
-    color: #888;
     margin-bottom: 1rem;
     letter-spacing: 0.05em;
 }
