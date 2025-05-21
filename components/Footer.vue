@@ -6,8 +6,8 @@
         <NuxtLink to="/projects/iks" class="footer-link">Projects</NuxtLink>
         <NuxtLink to="/about" class="footer-link">How I Think</NuxtLink>
         <NuxtLink to="/contact" class="footer-link">Contact</NuxtLink>
-        <NuxtLink to="/impressum" class="footer-link">Impressum</NuxtLink>
-        <NuxtLink to="/datenschutz" class="footer-link">Datenschutz</NuxtLink>
+        <NuxtLink to="/impressum" class="footer-link">Legal Notice</NuxtLink>
+        <NuxtLink to="/datenschutz" class="footer-link">Privacy Policy</NuxtLink>
       </div>
       <div class="footer-copyright">
         <p>&copy; {{ new Date().getFullYear() }} Jannik Fauser. All rights reserved.</p>

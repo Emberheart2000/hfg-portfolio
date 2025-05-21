@@ -32,6 +32,22 @@
                 <p>HfG Schwäbisch Gmünd</p>
               </div>
             </div>
+<<<<<<< HEAD
+
+            <!-- LinkedIn Profile Link -->
+            <a href="https://www.linkedin.com/in/jannik-fauser-5a83b4297/" target="_blank" rel="noopener noreferrer" class="contact-item linkedin-link">
+              <div class="contact-icon linkedin-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <h3 class="teal-text">LinkedIn</h3>
+                <p>Jannik Fauser</p>
+              </div>
+            </a>
+=======
+>>>>>>> parent of d21e414 (Refactor code structure for improved readability and maintainability)
           </div>
         </div>
         
@@ -39,10 +55,11 @@
           <h2 class="contact-subtitle teal-accent">Send Me a Message</h2>
           
           <!-- Form Success Message -->
-          <div v-if="formSubmitted && !formError" class="form-success neo-card">
+          <div v-if="mailtoGenerated" class="form-success neo-card">
             <div class="success-icon">✓</div>
-            <h3>Message Sent!</h3>
+            <h3>Email Client Opened</h3>
             <p>{{ formMessage }}</p>
+            <p class="small-text">If your email client didn't open automatically, please check your browser settings or copy the message and send it manually to jannik.fauser@hfg.design</p>
             <button @click="resetForm" class="neo-button">Send Another Message</button>
           </div>
           
@@ -55,7 +72,7 @@
           </div>
           
           <!-- Contact Form -->
-          <form v-if="!formSubmitted" @submit.prevent="handleSubmit" class="contact-form-fields">
+          <form v-if="!mailtoGenerated" @submit.prevent="handleMailtoSubmit" class="contact-form-fields">
             <div class="form-group">
               <label for="name">Name</label>
               <input 
@@ -65,7 +82,6 @@
                 class="neo-input" 
                 placeholder="Your Name" 
                 required
-                :disabled="isSubmitting"
               >
               <p v-if="formErrors.name" class="error-text">{{ formErrors.name }}</p>
             </div>
@@ -79,7 +95,6 @@
                 class="neo-input" 
                 placeholder="Your Email" 
                 required
-                :disabled="isSubmitting"
               >
               <p v-if="formErrors.email" class="error-text">{{ formErrors.email }}</p>
             </div>
@@ -93,7 +108,6 @@
                 rows="5" 
                 placeholder="Your Message" 
                 required
-                :disabled="isSubmitting"
               ></textarea>
               <p v-if="formErrors.message" class="error-text">{{ formErrors.message }}</p>
             </div>
@@ -101,10 +115,8 @@
             <button 
               type="submit" 
               class="neo-button submit-btn"
-              :disabled="isSubmitting"
             >
-              <span v-if="isSubmitting">Sending...</span>
-              <span v-else>Send Message</span>
+              Open Email Client
             </button>
           </form>
         </div>
@@ -125,8 +137,7 @@ const formData = reactive({
 });
 
 // Form state
-const isSubmitting = ref(false);
-const formSubmitted = ref(false);
+const mailtoGenerated = ref(false);
 const formError = ref(false);
 const formMessage = ref('');
 const formErrors = reactive({
@@ -171,27 +182,38 @@ const validateForm = () => {
   return isValid;
 };
 
-// Handle form submission
-const handleSubmit = async () => {
+// Handle mailto form submission
+const handleMailtoSubmit = () => {
   if (!validateForm()) {
     return;
   }
   
-  isSubmitting.value = true;
-  
   try {
-    const response = await ContactService.sendContactForm(formData);
+    // Create email subject
+    const subject = `Portfolio Contact from ${formData.name}`;
     
-    formMessage.value = response.message;
-    formError.value = response.status === 'error';
-    formSubmitted.value = true;
+    // Create email body with line breaks
+    const body = `Name: ${formData.name}
+Email: ${formData.email}
+
+Message:
+${formData.message}
+
+Sent from Portfolio Contact Form`;
+    
+    // Create mailto link with encoded parameters
+    const mailtoLink = `mailto:jannik.fauser@hfg.design?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open the mailto link
+    window.location.href = mailtoLink;
+    
+    // Set success message
+    formMessage.value = 'Your email client should have opened with your message. Just click send!';
+    mailtoGenerated.value = true;
   } catch (error) {
-    console.error('Error submitting form:', error);
+    console.error('Error opening mailto link:', error);
     formError.value = true;
-    formMessage.value = 'An unexpected error occurred. Please try again later.';
-    formSubmitted.value = true;
-  } finally {
-    isSubmitting.value = false;
+    formMessage.value = 'An error occurred while trying to open your email client. Please try again or send an email manually.';
   }
 };
 
@@ -200,13 +222,20 @@ const resetForm = () => {
   formData.name = '';
   formData.email = '';
   formData.message = '';
-  formSubmitted.value = false;
+  mailtoGenerated.value = false;
   formError.value = false;
   formMessage.value = '';
 };
 </script>
 
+
 <style>
+.small-text {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
 .teal-text {
   color: var(--neo-accent-color) !important;
 }

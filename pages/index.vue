@@ -11,10 +11,212 @@
                 </div>
             </div>
             <div class="hero-image neo-card">
-                <img src="/images/IMG_4643.png" alt="Jannik Fauser">
+                <img src="/images/IMG_4643_k.png" alt="Jannik Fauser">
+            </div>
+        </section>
+        <section id="projects" class="projects-section maxwidth">
+            <div class="section-header">
+                <div class="neo-separator"></div>
+                <h5 class="subtitle-text teal-text">RECENT PROJECTS</h5>
+            </div>
+
+            <div class="projects-grid">
+                <ProjectCard title="FOCAL" 
+                    subtitle="INVENTION DESIGN" 
+                    image="/images/invention/invention_cover.png"
+                    url="/projects/invention"
+                    description="Verlierst du beim Arbeiten am Laptop oft den Überblick über deine geöffneten Apps? Focal bringt Ordnung in dein digitales Arbeitsumfeld, indem Anwendungen räumlich anordnet werden können – direkt an den Wänden um dich herum." />
+                    
+                <ProjectCard title="NERVOUS SYSTEM" 
+                    subtitle="INTERACTIVE COMMUNICATION" 
+                    image="/images/ics/ics_cover.png"
+                    url="/projects/iks" 
+                    description="An interactive exhibition piece that explores the connection between technology and human nervous systems." />
+                    
+                <ProjectCard title="INVENTION" 
+                    subtitle="INTERFACE DESIGN" 
+                    image="/images/interface/interface_cover.png"
+                    url="/projects/invention"
+                    description="Exploring new ways of communication through innovative design concepts and strategies." />
+                
+                <ProjectCard title="PROGRAMMING" 
+                    subtitle="ANIMAL JOURNEY" 
+                    image="/images/programming/programming_cover.png"
+                    url="/projects/invention"
+                    description="What if people could explore their favourite animals on an interactive Website?" />
             </div>
         </section>
 
+<<<<<<< HEAD
+        <!-- CV Section -->
+        <section id="cv" class="cv-section maxwidth">
+            <div class="section-header">
+                <div class="neo-separator"></div>
+                <h5 class="subtitle-text teal-text">MY EXPERIENCE</h5>
+                <h2 class="section-title">Curriculum Vitae</h2>
+            </div>
+
+            <div class="cv-container">
+                <!-- Education Section -->
+                <div class="cv-category neo-container">
+                    <div class="cv-category-header">
+                        <div class="cv-icon">🎓</div>
+                        <h3 class="cv-category-title teal-accent">Education</h3>
+                    </div>
+                    
+                    <div class="cv-items">
+                        <div class="cv-item">
+                            <div class="cv-timeline">
+                                <span class="cv-year">2023 - Present</span>
+                                <div class="cv-timeline-line"></div>
+                            </div>
+                            <div class="cv-content">
+                                <h4 class="cv-title">Bachelor of Arts, Interaction Design</h4>
+                                <p class="cv-location">HfG – University of Design, Schwäbisch Gmünd</p>
+                                <p class="cv-description">Focused on creating intuitive user experiences and innovative interactive systems. Developed skills in UX/UI design, prototyping, and user research methods. Also really interested in design management and speculative design approaches.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-item">
+                            <div class="cv-timeline">
+                                <span class="cv-year">2020 - 2023</span>
+                                <div class="cv-timeline-line"></div>
+                            </div>
+                            <div class="cv-content">
+                                <h4 class="cv-title">State-certified Graphic Designer</h4>
+                                <p class="cv-location">Vocational college Kolping, Schwäbisch Gmünd</p>
+                                <p class="cv-description">Focused on layout and print, corporate design and illustration. Graduated with honors.</p>
+                            </div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-timeline">
+                                <span class="cv-year">2019-2020</span>
+                                <div class="cv-timeline-line"></div>
+                            </div>
+                            <div class="cv-content">
+                                <h4 class="cv-title">Bachelor of Engineering, Industrial Engineering and Management (incomplete)</h4>
+                                <p class="cv-location">University of Applied Sciences, Aalen</p>
+                                <p class="cv-description">Focused on manufacturing products and how to manage an own buisness.</p>
+                            </div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-timeline">
+                                <span class="cv-year">2010 - 2018</span>
+                                <div class="cv-timeline-line"></div>
+                            </div>
+                            <div class="cv-content">
+                                <h4 class="cv-title">Abitur</h4>
+                                <p class="cv-location">Franziskus Gymnasium, Mutlangen</p>
+                                <p class="cv-description">Focused on science and technology, also interested in economics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Work Experience Section -->
+                <div class="cv-category neo-container">
+                    <div class="cv-category-header">
+                        <div class="cv-icon">💼</div>
+                        <h3 class="cv-category-title teal-accent">Work Experience</h3>
+                    </div>
+                    
+                    <div class="cv-items">
+                        <div class="cv-item">
+                            <div class="cv-timeline">
+                                <span class="cv-year">2023</span>
+                                <div class="cv-timeline-line"></div>
+                            </div>
+                            <div class="cv-content">
+                                <h4 class="cv-title">Corporate Design and Marketing</h4>
+                                <p class="cv-location">Fechner Sauna</p>
+                                <p class="cv-description">Designed custom sauna concepts and represented the company at trade fairs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cv-item">
+                            <div class="cv-timeline">
+                                <span class="cv-year">2022 - 2023</span>
+                                <div class="cv-timeline-line"></div>
+                            </div>
+                            <div class="cv-content">
+                                <h4 class="cv-title">Design Internship </h4>
+                                <p class="cv-location"> dickekreativ </p>
+                                <p class="cv-description">Package design for clients, operating on a large format Plotter, developing websites with the UI department.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="cv-item">
+                            <div class="cv-timeline">
+                                <span class="cv-year">2019</span>
+                                <div class="cv-timeline-line"></div>
+                            </div>
+                            <div class="cv-content">
+                                <h4 class="cv-title">Product testing</h4>
+                                <p class="cv-location">ZF TRW Alfdorf</p>
+                                <p class="cv-description">Evaluating Long-term, load, and safety tests for seat belts to check their durability under prolonged use, measure their strength under high forces, and verify their reliable performance in crash scenarios to ensure compliance with international safety standards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- Skills Section -->
+                <div class="cv-category neo-container">
+                    <div class="cv-category-header">
+                        <div class="cv-icon">🛠️</div>
+                        <h3 class="cv-category-title teal-accent">Skills</h3>
+                    </div>
+                    
+                    <div class="skills-container">
+                        <div class="skills-group">
+                            <h4 class="skills-title">Design</h4>
+                            <div class="skills-items">
+                                <div class="skill-pill">UI/UX Design</div>
+                                <div class="skill-pill">Interaction Design</div>
+                                <div class="skill-pill">Wireframing</div>
+                                <div class="skill-pill">Prototyping</div>
+                                <div class="skill-pill">User Research</div>
+                                <div class="skill-pill">Visual Design</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-group">
+                            <h4 class="skills-title">Tools</h4>
+                            <div class="skills-items">
+                                <div class="skill-pill">Figma</div>
+                                <div class="skill-pill">Adobe XD</div>
+                                <div class="skill-pill">Photoshop</div>
+                                <div class="skill-pill">Illustrator</div>
+                                <div class="skill-pill">After Effects</div>
+                                <div class="skill-pill">Sketch</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-group">
+                            <h4 class="skills-title">Development</h4>
+                            <div class="skills-items">
+                                <div class="skill-pill">HTML/CSS</div>
+                                <div class="skill-pill">JavaScript</div>
+                                <div class="skill-pill">Vue.js</div>
+                                <div class="skill-pill">React</div>
+                                <div class="skill-pill">Processing</div>
+                                <div class="skill-pill">Arduino</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Download CV Button -->
+                <div class="cv-download">
+                    <a href="/files/Jannik_Fauser_CV.pdf" download class="neo-button">
+                        <span class="download-icon">📄</span>
+                        Download Full CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+=======
         <section id="projects" class="projects-section maxwidth">
             <div class="section-header">
                 <div class="neo-separator"></div>
@@ -41,24 +243,21 @@
                     description="Exploring new ways of communication through innovative design concepts and strategies." />
             </div>
         </section>
+>>>>>>> parent of d21e414 (Refactor code structure for improved readability and maintainability)
     </div>
 </template>
 
-<script lang="ts" setup>
-import { useProjectsStore } from '~/composables/useProjectsStore';
+<script setup lang="ts">
 import { onMounted } from 'vue';
 
 // Scroll behavior helper for smooth anchor navigation
 onMounted(() => {
-  // Initialize projects store
-  const projectsStore = useProjectsStore();
-  
   // Handle anchor links with smooth scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      
-      const targetId = this.getAttribute('href');
+
+      const targetId = (this as HTMLAnchorElement).getAttribute('href');
       if (targetId) {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
